@@ -103,14 +103,13 @@ jobs:
       #
       # Configure Docker to use the gcloud command-line tool as a credential
       # helper for authentication
-      # - run: |-
-      #     gcloud --quiet auth configure-docker
-      #
+      - run: |-
+          gcloud --quiet auth configure-docker
       
       # Uses the docker login action
       - uses: 'docker/login-action@v1'
         with:
-          registry: 'gcr.io' # or REGION-docker.pkg.dev
+          registry: 'us.gcr.io' # or REGION-docker.pkg.dev
           username: 'oauth2accesstoken'
           password: '${{ steps.auth.outputs.access_token }}'
 
