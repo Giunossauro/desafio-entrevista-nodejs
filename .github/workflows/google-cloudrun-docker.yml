@@ -60,7 +60,7 @@ env:
   GAR_LOCATION: us-central1 # TODO: update Artifact Registry location
   SERVICE: entrevista-svc #treino-git-flow-e-gh-actions-app # TODO: update Cloud Run service name
   REGION: us-central1 # TODO: update Cloud Run service region
-  IMAGE: 'gcr.io/quick-glow-372722/github_giunossauro_desafio-entrevista-nodejs/entrevista-svc:${{ github.sha }}' #'${{ secrets.IMAGE }}:${{ github.sha }}' #'gcr.io/quick-glow-372722/treino-git-flow-e-gh-actions-app:${{ github.sha }}'
+  IMAGE: 'gcr.io/quick-glow-372722/entrevista-svc:${{ github.sha }}' #'${{ secrets.IMAGE }}:${{ github.sha }}' #'gcr.io/quick-glow-372722/treino-git-flow-e-gh-actions-app:${{ github.sha }}'
 
 jobs:
   deploy:
