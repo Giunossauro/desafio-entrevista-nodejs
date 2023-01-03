@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  app:
+    build: .
+    entrypoint: .docker/entrypoint.sh
+    container_name: treinogcloud
+    hostname: "0.0.0.0"
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/home/node/app
+    environment:
+      - IS_TEST=0
+      - PORT=8080
