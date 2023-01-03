@@ -60,7 +60,7 @@ env:
   GAR_LOCATION: ${{ secrets.GAR_LOCATION }} # TODO: update Artifact Registry location
   SERVICE: ${{ secrets.SERVICE }} #treino-git-flow-e-gh-actions-app # TODO: update Cloud Run service name
   REGION: ${{ secrets.REGION }} # TODO: update Cloud Run service region
-  IMAGE: 'gcr.io/quick-glow-372722/parking-svc:${{ github.sha }}' #'${{ secrets.IMAGE }}:${{ github.sha }}' #'gcr.io/quick-glow-372722/treino-git-flow-e-gh-actions-app:${{ github.sha }}'
+  IMAGE: 'gcr.io/quick-glow-372722/parking-service:${{ github.sha }}' #'${{ secrets.IMAGE }}:${{ github.sha }}' #'gcr.io/quick-glow-372722/treino-git-flow-e-gh-actions-app:${{ github.sha }}'
 
 jobs:
   deploy:
