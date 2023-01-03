@@ -56,11 +56,11 @@ on:
         default: "--port 8080 --cpu 1 --memory 1024Mi --timeout 12m --concurrency 80 --min-instances 0 --max-instances 1" # --allow-unauthenticated"
 
 env:
-  PROJECT_ID: ${{ secrets.PROJECT_ID }} # TODO: update Gooagle Cloud project id 
-  GAR_LOCATION: ${{ secrets.GAR_LOCATION }} # TODO: update Artifact Registry location
-  SERVICE: ${{ secrets.SERVICE }} #treino-git-flow-e-gh-actions-app # TODO: update Cloud Run service name
-  REGION: ${{ secrets.REGION }} # TODO: update Cloud Run service region
-  IMAGE: 'gcr.io/quick-glow-372722/entrevista-svc:${{ github.sha }}' #'${{ secrets.IMAGE }}:${{ github.sha }}' #'gcr.io/quick-glow-372722/treino-git-flow-e-gh-actions-app:${{ github.sha }}'
+  PROJECT_ID: quick-glow-372722 # TODO: update Gooagle Cloud project id 
+  GAR_LOCATION: us-central1 # TODO: update Artifact Registry location
+  SERVICE: entrevista-svc #treino-git-flow-e-gh-actions-app # TODO: update Cloud Run service name
+  REGION: us-central1 # TODO: update Cloud Run service region
+  IMAGE: 'gcr.io/quick-glow-372722/github_giunossauro_desafio-entrevista-nodejs/entrevista-svc:${{ github.sha }}' #'${{ secrets.IMAGE }}:${{ github.sha }}' #'gcr.io/quick-glow-372722/treino-git-flow-e-gh-actions-app:${{ github.sha }}'
 
 jobs:
   deploy:
