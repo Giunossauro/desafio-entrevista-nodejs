@@ -60,7 +60,7 @@ env:
   GAR_LOCATION: ${{ secrets.GAR_LOCATION }} # TODO: update Artifact Registry location
   SERVICE: ${{ secrets.SERVICE }} #treino-git-flow-e-gh-actions-app # TODO: update Cloud Run service name
   REGION: ${{ secrets.REGION }} # TODO: update Cloud Run service region
-  IMAGE: '${{ secrets.IMAGE }}:${{ github.sha }}' #'gcr.io/quick-glow-372722/treino-git-flow-e-gh-actions-app:${{ github.sha }}'
+  IMAGE: 'us.gcr.io/quick-glow-372722/github_giunossauro_desafio-entrevista-nodejs/estacionamento-svc:${{ github.sha }}' #'${{ secrets.IMAGE }}:${{ github.sha }}' #'gcr.io/quick-glow-372722/treino-git-flow-e-gh-actions-app:${{ github.sha }}'
 
 jobs:
   deploy:
@@ -72,10 +72,6 @@ jobs:
     runs-on: ubuntu-latest #self-hosted
 
     steps:
-    
-      - name: Show Output
-        run: 'echo ${{ env.GAR_LOCATION }}+++${{ env.SERVICE }}+++${{ env.REGION }}'
-      
       - name: Checkout
         uses: actions/checkout@v3
 
@@ -103,13 +99,13 @@ jobs:
       #
       # Configure Docker to use the gcloud command-line tool as a credential
       # helper for authentication
-      - run: |-
-          gcloud --quiet auth configure-docker
+      # - run: |-
+      #     gcloud --quiet auth configure-docker
       
       # Uses the docker login action
       - uses: 'docker/login-action@v1'
         with:
-          registry: 'us.gcr.io' # or REGION-docker.pkg.dev
+          registry: 'gcr.io' # or REGION-docker.pkg.dev
           username: 'oauth2accesstoken'
           password: '${{ steps.auth.outputs.access_token }}'
 
@@ -117,8 +113,8 @@ jobs:
 
       - name: Build and Push Container
         run: |-
-          docker build -t "${{ env.IMAGE }}" ./
-          docker push "${{ env.IMAGE }}"
+          docker build -t "gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE }}:${{ github.sha }}" ./
+          docker push "gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE }}:${{ github.sha }}"
 
       # END - Docker auth and build
 
