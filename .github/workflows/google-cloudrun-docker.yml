@@ -53,7 +53,7 @@ on:
         required: false
         type: string
         description: "Additional cloud run flags to apply during deployment"
-        default: "--port 8080 --cpu 1 --memory 1024Mi --timeout 5m --concurrency 80 --min-instances 0 --max-instances 1" # --allow-unauthenticated"
+        default: "--port 8080 --cpu 1 --memory 1024Mi --timeout 12m --concurrency 80 --min-instances 0 --max-instances 1" # --allow-unauthenticated"
 
 env:
   PROJECT_ID: ${{ secrets.PROJECT_ID }} # TODO: update Gooagle Cloud project id 
