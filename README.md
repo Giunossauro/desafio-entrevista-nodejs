@@ -1,3 +1,9 @@
+[![Node.js CI](https://github.com/Giunossauro/desafio-entrevista-nodejs/actions/workflows/node.js.yml/badge.svg)](https://github.com/Giunossauro/desafio-entrevista-nodejs/actions/workflows/node.js.yml)
+
+[![Coverage Status](https://coveralls.io/repos/github/Giunossauro/desafio-entrevista-nodejs/badge.svg?branch=develop)](https://coveralls.io/github/Giunossauro/desafio-entrevista-nodejs?branch=develop)
+
+[![Build and Deploy to Cloud Run](https://github.com/Giunossauro/desafio-entrevista-nodejs/actions/workflows/google-cloudrun-docker.yml/badge.svg)](https://github.com/Giunossauro/desafio-entrevista-nodejs/actions/workflows/google-cloudrun-docker.yml)
+
 ![Dr Consulta](https://drconsulta.com/_next/image?url=%2Fimages%2FLogo-Dr-Consulta-Branco.png&w=128&q=100 "DrConsulta")
 
 *"Salvar vidas e cuidar das pessoas porque elas não podem esperar nas filas da saúde."*
