@@ -101,10 +101,11 @@ jobs:
       #- name: Build the Docker image
       #  run: 'docker build . --file Dockerfile --tag ${{ env.IMAGE }}'
 
-      - name: Build and Push Container
-        run: |-
-          docker build -t "${{ secrets.IMAGE_URL }}:${{ github.sha }}" ./
-          docker push "${{ secrets.IMAGE_URL }}:${{ github.sha }}"
+      - name: Build Container
+        run: docker build -t "${{ secrets.IMAGE_URL }}:${{ github.sha }}" ./
+        
+      - name: Push Container
+        run: docker push "${{ secrets.IMAGE_URL }}:${{ github.sha }}"
 
       - name: Deploy to Cloud Run
         id: deploy
