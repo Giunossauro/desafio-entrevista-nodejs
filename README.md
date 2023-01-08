@@ -1,6 +1,4 @@
-[![Node.js CI](https://github.com/Giunossauro/desafio-entrevista-nodejs/actions/workflows/node.js.yml/badge.svg)](https://github.com/Giunossauro/desafio-entrevista-nodejs/actions/workflows/node.js.yml)
-
-[![Coverage Status](https://coveralls.io/repos/github/Giunossauro/desafio-entrevista-nodejs/badge.svg?branch=develop)](https://coveralls.io/github/Giunossauro/desafio-entrevista-nodejs?branch=develop)
+[![Node.js CI](https://github.com/Giunossauro/desafio-entrevista-nodejs/actions/workflows/node.js.yml/badge.svg)](https://github.com/Giunossauro/desafio-entrevista-nodejs/actions/workflows/node.js.yml) [![Coverage Status](https://coveralls.io/repos/github/Giunossauro/desafio-entrevista-nodejs/badge.svg?branch=develop)](https://coveralls.io/github/Giunossauro/desafio-entrevista-nodejs?branch=develop)
 
 [![Build and Deploy to Cloud Run](https://github.com/Giunossauro/desafio-entrevista-nodejs/actions/workflows/google-cloudrun-docker.yml/badge.svg)](https://github.com/Giunossauro/desafio-entrevista-nodejs/actions/workflows/google-cloudrun-docker.yml)
 
