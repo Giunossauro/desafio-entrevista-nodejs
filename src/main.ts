@@ -22,19 +22,9 @@ async function bootstrap() {
     .setVersion('1.0')
     .addTag('Estacionamento')
     .build();
-    
+
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
-
-  // para tratamento de erros e excessões, mais em:
-  //https://docs.nestjs.com/exception-filters
-  // app.useGlobalFilters(new HttpExceptionFilter);
-  // pode usar a nível de método, módulo e global, que é o caso
-
-  /* app.use((req: Request, res: Response, next) => {
-    console.log(req.url);
-    next();
-  }); */
   
   await app.listen(8080);
 }
