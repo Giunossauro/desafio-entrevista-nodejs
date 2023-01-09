@@ -3,7 +3,7 @@ import { Endereco } from "./related/endereco.entity";
 import { Login } from "./related/login.entity";
 import { Veiculo } from "./related/veiculo.entity";
 
-@Entity("treatments", { database: "estacionamento", schema: "empresa" })
+@Entity("empresa", { database: "estacionamento", schema: "empresa" })
 export class Empresa {
   @PrimaryGeneratedColumn("uuid", { name: "empresa_id" })
   empresaId!: string;

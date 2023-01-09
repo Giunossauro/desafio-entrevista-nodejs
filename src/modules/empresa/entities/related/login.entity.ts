@@ -2,7 +2,7 @@ import { initialize } from "passport";
 import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, OneToOne } from "typeorm";
 import { Empresa } from "../../entities/empresa.entity";
 
-@Entity("login", { database: "estacionamento", schema: "empresas" })
+@Entity("login", { database: "estacionamento", schema: "empresa" })
 export class Login {
   @PrimaryGeneratedColumn("uuid", { name: "login_id" })
   loginId!: string;

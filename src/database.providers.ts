@@ -1,5 +1,4 @@
 import { DataSource } from "typeorm";
-import { test1673217770171 } from "./database/migrations/1673217770171-test";
 import * as dotenv from "dotenv";
 
 dotenv.config();
@@ -15,9 +14,7 @@ export const dataSource = new DataSource({
   logger: "file", */
   entities: [`${__dirname}/**/*.entity.{ts,js}`],
   synchronize: false,
-  migrations: [
-    test1673217770171
-  ],
+  migrations: [`${__dirname}/**/*.migrations.{ts,js}`],
   socketPath: process.env.INSTANCE_UNIX_SOCKET
 });
 
