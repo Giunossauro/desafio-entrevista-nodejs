@@ -20,10 +20,12 @@ jobs:
         node-version: 18.x
         # cache: 'npm'
 
-    - name: npm install, make test-coverage
-      run: |
-        npm i
-        make test-coverage
+    - name: npm install
+      run: npm i
+
+    - name: make test-coverage
+      run: make test-coverage
+
     - name: Coveralls GitHub Action
       uses: coverallsapp/github-action@v1.1.0
       with:
