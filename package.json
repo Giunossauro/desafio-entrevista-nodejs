@@ -20,7 +20,7 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "prepare": "husky install",
-    "migrations:generate": "rimraf dist && mnest build && npx typeorm migration:generate src/database/migrations/test -d dist/database.providers.js",
+    "migrations:generate": "rimraf dist && nest build && npx typeorm migration:generate src/database/migrations/test -d dist/database.providers.js",
     "migrations:generate-cached": "npx typeorm migration:generate src/database/migrations/test -d dist/database.providers.js",
     "migrations:run": "rimraf dist && nest build && npx typeorm migration:run -d dist/database.providers.js",
     "migrations:run-cached": "npx typeorm migration:run -d dist/database.providers.js"
