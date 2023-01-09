@@ -12,9 +12,9 @@ export const dataSource = new DataSource({
   database: process.env.DB_NAME,/* 
   logging: true,
   logger: "file", */
-  entities: [`src/**/*.entity.ts`],
+  entities: [`dist/**/*.entity.{js,ts}`],
   synchronize: false,
-  migrations: [`src/database/migrations/*.ts`],
+  migrations: [`dist/database/migrations/*.{js,ts}`],
   socketPath: process.env.INSTANCE_UNIX_SOCKET
 });
 
