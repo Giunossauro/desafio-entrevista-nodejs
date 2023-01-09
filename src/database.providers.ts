@@ -14,7 +14,7 @@ export const dataSource = new DataSource({
   logger: "file", */
   entities: [`${__dirname}/**/*.entity.{ts,js}`],
   synchronize: false,
-  migrations: [`${__dirname}/**/*.migrations.{ts,js}`],
+  migrations: [`${__dirname}/database/migrations/*.{ts,js}`],
   socketPath: process.env.INSTANCE_UNIX_SOCKET
 });
 
