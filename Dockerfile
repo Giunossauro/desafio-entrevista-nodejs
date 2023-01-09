@@ -6,9 +6,9 @@ COPY package*.json ./
 # RUN apk add --no-cache bash
 RUN npm install -g @nestjs/cli
 RUN npm ci
+COPY . ./
 RUN npm run build
 # EXPOSE 8080
 # ENTRYPOINT npm install && npm run build && npm run start:dev
-COPY . ./
 USER 0
 CMD [ "npm", "start" ]
