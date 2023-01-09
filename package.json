@@ -7,7 +7,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "nest build && npm run migrations:generate-cached && npm run migrations:run",
+    "build": "rimraf dist && nest build && npm run migrations:generate-cached && npm run migrations:run",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
@@ -20,9 +20,9 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "prepare": "husky install",
-    "migrations:generate": "nest build && npx typeorm migration:generate src/database/migrations/test -d dist/database.providers.js",
+    "migrations:generate": "rimraf dist && mnest build && npx typeorm migration:generate src/database/migrations/test -d dist/database.providers.js",
     "migrations:generate-cached": "npx typeorm migration:generate src/database/migrations/test -d dist/database.providers.js",
-    "migrations:run": "nest build && npx typeorm migration:run -d dist/database.providers.js",
+    "migrations:run": "rimraf dist && nest build && npx typeorm migration:run -d dist/database.providers.js",
     "migrations:run-cached": "npx typeorm migration:run -d dist/database.providers.js"
   },
   "dependencies": {
