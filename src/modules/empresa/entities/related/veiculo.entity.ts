@@ -1,7 +1,7 @@
 import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, ManyToOne } from "typeorm";
 import { Empresa } from "../../entities/empresa.entity";
 
-@Entity("veiculo", { database: "estacionamento", schema: "empresas" })
+@Entity("veiculo", { database: "estacionamento", schema: "empresa" })
 export class Veiculo {
   @PrimaryGeneratedColumn("uuid", { name: "veiculo_id" })
   veiculoId!: string;
