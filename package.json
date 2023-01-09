@@ -8,6 +8,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
+    "prestart": "npm run migrations:run-cached",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
@@ -21,7 +22,8 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "prepare": "husky install",
     "migrations:generate": "npm run build && npx typeorm migration:generate src/database/migrations/test -d dist/database.providers.js",
-    "migrations:run": "npm run build && npx typeorm migration:run -d dist/database.providers.js"
+    "migrations:run": "npm run build && npx typeorm migration:run -d dist/database.providers.js",
+    "migrations:run-cached": "npx typeorm migration:run -d dist/database.providers.js"
   },
   "dependencies": {
     "@nestjs/common": "^9.0.0",
