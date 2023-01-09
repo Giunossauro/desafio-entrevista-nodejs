@@ -1,5 +1,6 @@
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
@@ -15,16 +16,17 @@ async function bootstrap() {
     transform: true
   }));
 
-  // para tratamento de erros e excessões, mais em:
-  //https://docs.nestjs.com/exception-filters
-  // app.useGlobalFilters(new HttpExceptionFilter);
-  // pode usar a nível de método, módulo e global, que é o caso
+  const config = new DocumentBuilder()
+    .setTitle('Desafio NestJS')
+    .setDescription('API REST para gerenciar um estacionamento de carros e motos')
+    .setVersion('1.0')
+    .addTag('empresa')
+    .addTag('veiculo')
+    .build();
 
-  /* app.use((req: Request, res: Response, next) => {
-    console.log(req.url);
-    next();
-  }); */
+  const document = SwaggerModule.createDocument(app, config);
+  SwaggerModule.setup('api', app, document);
   
-  await app.listen(3000);
+  await app.listen(8080);
 }
 bootstrap();
