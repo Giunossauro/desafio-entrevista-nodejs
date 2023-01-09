@@ -8,6 +8,7 @@ RUN npm install -g @nestjs/cli
 RUN npm ci
 COPY . ./
 RUN npm run build
+ENTRYPOINT [ "npm", "run", "migrations" ]
 # EXPOSE 8080
 # ENTRYPOINT npm install && npm run build && npm run start:dev
 USER 0
