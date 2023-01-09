@@ -20,7 +20,8 @@ async function bootstrap() {
     .setTitle('Desafio NestJS')
     .setDescription('API REST para gerenciar um estacionamento de carros e motos')
     .setVersion('1.0')
-    .addTag('Estacionamento')
+    .addTag('empresa')
+    .addTag('veiculo')
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
